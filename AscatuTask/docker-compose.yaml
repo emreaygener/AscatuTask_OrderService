@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  order-service: 
+    build: .
+    ports:
+      - "8081:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Data Source=orders.db
+    networks:
+      - shared_network
+
+networks:
+  shared_network:
+    external: true
+  
+  
+
